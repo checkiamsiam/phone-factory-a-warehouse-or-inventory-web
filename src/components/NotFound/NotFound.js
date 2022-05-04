@@ -27,7 +27,6 @@ const NotFound = () => {
           </div>
           <div className="mt-4  w-3/4 mx-auto">
             <img
-              className='w-full '
               src={notfound}
               alt="404"
               className="object-cover w-full h-full"
