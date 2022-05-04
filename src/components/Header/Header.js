@@ -20,22 +20,22 @@ const Header = () => {
           </button>
         </div>
       </nav>
-      {open && <div className='h-[90vh] w-full absolute  flex justify-center items-center z-10 bg-[rgba(54,53,52,0.5)] '>
+      {open && <div className='h-[90vh] w-full absolute  flex justify-center items-center z-10 bg-[rgba(54,53,52,0.65)] '>
         <ul class="py-1 md:w-1/5 text-center" aria-labelledby="dropdown">
           <li>
-            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white-700 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Home</a>
+            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Home</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white-700 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">About</a>
+            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">About</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white-700 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Inventory</a>
+            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Inventory</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white-700 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Blogs</a>
+            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Blogs</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white-700 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Contact us</a>
+            <a href="#" class="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Contact us</a>
           </li>
           <li>
             <button type="button" class="mt-3 text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 ">Sign out</button>
