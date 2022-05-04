@@ -23,10 +23,10 @@ const Header = () => {
       {open && <div className='h-[90vh] w-full absolute  flex justify-center items-center z-10 bg-[rgba(54,53,52,0.65)] '>
         <ul className="py-1 md:w-1/5 text-center" aria-labelledby="dropdown">
           <li>
-            <CustomLink to="/" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" activeClassName="text-red-700">Home</CustomLink>
+            <CustomLink to="/" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >Home</CustomLink>
           </li>
           <li>
-            <CustomLink to="/about" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" activeClassName="text-red-700">About</CustomLink>
+            <CustomLink to="/about" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >About</CustomLink>
           </li>
           <li>
             <CustomLink to="/inventory" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Inventory</CustomLink>

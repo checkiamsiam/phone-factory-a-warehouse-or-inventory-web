@@ -6,70 +6,70 @@ const Footer = () => {
   return (
     <div>
 
-      <footer class="bg-gray-800">
-        <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+      <footer className="bg-gray-800">
+        <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
-            <ul class="text-gray-300">
-              <li class="mb-4">
-                <Link to="/about" class=" hover:underline">About</Link>
+            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
+            <ul className="text-gray-300">
+              <li className="mb-4">
+                <Link to="/about" className=" hover:underline">About</Link>
               </li>
-              <li class="mb-4">
-                <Link to="/inventory" class="hover:underline">inventory</Link>
+              <li className="mb-4">
+                <Link to="/inventory" className="hover:underline">inventory</Link>
               </li>
-              <li class="mb-4">
-                <Link to="/contact" class="hover:underline">Contact</Link>
+              <li className="mb-4">
+                <Link to="/contact" className="hover:underline">Contact</Link>
               </li>
-              <li class="mb-4">
-                <Link to="/blogs" class="hover:underline">Blog</Link>
+              <li className="mb-4">
+                <Link to="/blogs" className="hover:underline">Blog</Link>
               </li>
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Help center</h2>
-            <ul class="text-gray-300">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Discord Server</a>
+            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">Help center</h2>
+            <ul className="text-gray-300">
+              <li className="mb-4">
+                <a href="#" className="hover:underline">Discord Server</a>
               </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Twitter</a>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">Twitter</a>
               </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Facebook
-                </a></li><a href="#" class="hover:underline">
-              </a><li class="mb-4"><a href="#" class="hover:underline">
-              </a><a href="#" class="hover:underline">Mail</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
-            <ul class="text-gray-300">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Privacy Policy</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Licensing</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">Facebook
+                </a></li><a href="#" className="hover:underline">
+              </a><li className="mb-4"><a href="#" className="hover:underline">
+              </a><a href="#" className="hover:underline">Mail</a>
               </li>
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Best Brands</h2>
-            <ul class="text-gray-300">
-              <li class="mb-4">
-                <a href="https://www.apple.com/" target="_blank" class="hover:underline">Apple</a>
+            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
+            <ul className="text-gray-300">
+              <li className="mb-4">
+                <a href="#" className="hover:underline">Privacy Policy</a>
               </li>
-              <li class="mb-4">
-                <a href="https://www.mi.com/bd/" target="_blank" class="hover:underline">MI</a>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">Licensing</a>
               </li>
-              <li class="mb-4">
-                <a href="https://www.oppo.com/bd/" target="_blank" class="hover:underline">Oppo</a>
+              <li className="mb-4">
+                <a href="#" className="hover:underline">Terms &amp; Conditions</a>
               </li>
-              <li class="mb-4">
-                <a href="http://www.vivo.com/bd/" target="_blank" class="hover:underline">Vivo</a>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">Best Brands</h2>
+            <ul className="text-gray-300">
+              <li className="mb-4">
+                <a href="https://www.apple.com/" target="_blank" className="hover:underline">Apple</a>
+              </li>
+              <li className="mb-4">
+                <a href="https://www.mi.com/bd/" target="_blank" className="hover:underline">MI</a>
+              </li>
+              <li className="mb-4">
+                <a href="https://www.oppo.com/bd/" target="_blank" className="hover:underline">Oppo</a>
+              </li>
+              <li className="mb-4">
+                <a href="http://www.vivo.com/bd/" target="_blank" className="hover:underline">Vivo</a>
               </li>
             </ul>
           </div>
