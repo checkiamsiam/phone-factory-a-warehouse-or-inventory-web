@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import logo from '../../images/mobile.png'
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CustomLink from '../Shared/CustomLink/CustomLink';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const [user] = useAuthState(auth);
   return (
-    <div  className='z-20 fixed top-0 w-full '>
+    <div className='z-20 fixed top-0 w-full '>
       <nav className=" bg-[rgba(54,53,52,0.47)]  border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link to="/" className="flex items-center">
@@ -39,7 +43,8 @@ const Header = () => {
             <CustomLink to="/contact" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Contact us</CustomLink>
           </li>
           <li>
-            <button onClick={() => navigate('/login')} type="button" className="mt-3 text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 ">Log in</button>
+            {!user ? <button onClick={() => navigate('/login')} type="button" className="mt-3 text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 ">Log in</button> :
+              <button onClick={() => signOut(auth)} type="button" className="mt-3 text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 ">Sign Out</button>}
           </li>
         </ul>
       </div>}

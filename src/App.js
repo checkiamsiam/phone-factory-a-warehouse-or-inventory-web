@@ -11,6 +11,7 @@ import Items from './components/Items/Items';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Signup from './components/Signup/Signup';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <Toaster />
     </div>
   );
 }
