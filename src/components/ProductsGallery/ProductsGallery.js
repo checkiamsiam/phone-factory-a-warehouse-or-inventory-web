@@ -41,7 +41,7 @@ const ProductsGallery = () => {
   };
   return (
     <div>
-      <h1 className='text-5xl text-blue-600 my-5 text-center '><span className='border-b-4 border-blue-300 border-dotted '>Products Image Gallery</span></h1>
+      <h1 className='text-5xl text-blue-600 my-5 text-center '><div>Products Image Gallery <br /> <span className='text-sm my-3 border-b-4 border-blue-300 border-dotted '>See all products in one album</span></div></h1>
       <Slider {...settings}>
         {products.map(product => <div className='my-5' key={product._id}> <GalleryCard data={product}></GalleryCard> </div>)}
 
