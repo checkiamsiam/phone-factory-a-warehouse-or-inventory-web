@@ -7,7 +7,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   return (
-    <div className='z-20 fixed top-0 w-full '>
+    <div  className='z-20 fixed top-0 w-full '>
       <nav className=" bg-[rgba(54,53,52,0.47)]  border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link to="/" className="flex items-center">
@@ -21,7 +21,7 @@ const Header = () => {
           </button>
         </div>
       </nav>
-      {open && <div className='h-[90vh] w-full absolute  flex justify-center items-center z-10 bg-[rgba(54,53,52,0.65)] '>
+      {open && <div className='h-[90vh] w-full absolute  flex justify-center items-center z-10 bg-[rgba(54,53,52,0.74)] '>
         <ul className="py-1 md:w-1/5 text-center" aria-labelledby="dropdown">
           <li>
             <CustomLink to="/" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >Home</CustomLink>

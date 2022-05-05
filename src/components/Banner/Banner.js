@@ -16,7 +16,7 @@ const Banner = () => {
   };
   return (
 
-    <div className="md:w-[95vw] mx-auto md:p-0 p-5 pt-0">
+    <div id='top' className="md:w-[95vw] mx-auto md:p-0 p-5 pt-0">
       <Slider {...settings}>
         <div>
           <img className="w-full md:h-[100vh]" src={sliderimage3} />

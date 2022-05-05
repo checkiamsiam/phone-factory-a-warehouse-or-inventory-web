@@ -83,17 +83,9 @@ const Footer = () => {
               </Link>
               <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                  <Link to="/about" className="mr-4 hover:underline md:mr-6 ">About</Link>
+                  <a href="#top" className="scroll-smooth mr-4 hover:underline md:mr-6 bg-blue-400 text-white px-5 py-2 rounded-md">Jump to top</a>
                 </li>
-                <li>
-                  <Link to="/privecy-policy" className="mr-4 hover:underline md:mr-6">Privacy Policy</Link>
-                </li>
-                <li>
-                  <Link to="/license" className="mr-4 hover:underline md:mr-6 ">Licensing</Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:underline">Contact</Link>
-                </li>
+               
               </ul>
             </div>
           </div>
