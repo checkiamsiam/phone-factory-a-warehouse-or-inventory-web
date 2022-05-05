@@ -8,7 +8,8 @@ import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInW
 import auth from '../../firebase.init';
 import toast from 'react-hot-toast';
 import { signOut } from 'firebase/auth';
-import Loader from '../Shared/CustomLink/Loader';
+import Loader from '../Loader/Loader';
+
 
 
 
@@ -18,7 +19,7 @@ const Signup = () => {
     const [fistName, setfistName] = useState('')
     const [lastName, setLastName] = useState('')
     const [displayName, setName] = useState('');
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
     const [
         createUserWithEmailAndPassword,
@@ -108,7 +109,7 @@ const Signup = () => {
                         <div className="absolute inset-y-0 right-0 top-8 pr-3 flex items-center pointer-events-none">
                             <svg className="h-5 w-5 text-gray-400" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         </div>
-                        <input onChange={handlePassword} className="border py-2 px-3 text-grey-800 outline-blue-400" type="password" name="password" id="password" required placeholder='password' />
+                    <input onChange={handlePassword} className="border py-2 px-3 text-grey-800 outline-blue-400" type="password" name="password" id="password" required placeholder='password' />
                     </div>
                     <div>
                         <label className="block mb-3 text-gray-500 font-bold" htmlFor="remember">
