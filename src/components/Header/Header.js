@@ -12,9 +12,9 @@ const Header = () => {
   const [user] = useAuthState(auth);
   const firstLetter = user?.displayName?.slice(0, 1);
   return (
-    <div className='z-20 fixed top-0 w-full '>
-      <nav className=" bg-[rgba(54,53,52,0.47)]  border-gray-200   py-2.5 rounded dark:bg-gray-800">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
+    <div className='z-20 fixed top-0 w-full'>
+      <nav className=" bg-[rgba(54,53,52,0.47)]   px-7  border-gray-200   py-2.5 rounded dark:bg-gray-800">
+        <div className="container flex flex-wrap justify-between items-center ">
           <Link to="/" className="flex items-center">
             <img src={logo} className="mr-3 h-6 sm:h-9" alt="logo of this inventory website" />
             <span className="self-center text-xl font-semibold italic font-mono whitespace-nowrap dark:text-white text-blue-600">Phone-Factor</span>
