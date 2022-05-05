@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import { BsArrowRight } from "react-icons/bs";
+import useProducts from '../../hooks/useProducts';
 
 const Items = () => {
-  const [products, setProducts] = useState([]);
   const [seeAll, setSeeAll] = useState(false);
-  useEffect(() => {
-    fetch('https://phone-factor.herokuapp.com/products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
-  }, [])
+  const [products] = useProducts();
   const homePageProduct = products.slice(0, 6);
   return (
     <div>

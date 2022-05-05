@@ -30,14 +30,16 @@ const Login = () => {
   const [signInWithFacebook, user4, loading4, error4] = useSignInWithFacebook(auth);
   const [sendPasswordResetEmail, sending, error5] = useSendPasswordResetEmail(auth);
 
-
-
   if (loading1 || loading2 || loading3 || loading4) {
     return <Loader></Loader>
 }
 
 if (sending) {
   toast('reset password email sending')
+}
+
+if(user1 || user2 || user3 || user4){
+  navigate(from, { replace: true })
 }
 
 error1 && console.log(error1.message);
@@ -66,13 +68,17 @@ error5 && console.log(error5.message);
     await navigate(from, { replace: true });
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     await signInWithEmailAndPassword(email, password)
     if (user1) {
       await navigate(from, { replace: true });
+      return
     } else {
       await setErrorMessege('Your entire email or password is incorrect')
     }
+    setEmail('')
+    setPassword('')
   }
 
   const handleReset = async () => {

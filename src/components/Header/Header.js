@@ -19,8 +19,8 @@ const Header = () => {
             <img src={logo} className="mr-3 h-6 sm:h-9" alt="logo of this inventory website" />
             <span className="self-center text-xl font-semibold italic font-mono whitespace-nowrap dark:text-white text-blue-600">Phone-Factor</span>
           </Link>
-          {user && (user?.photoURL ? <img src={user?.photoURL} className="absolute top-2 right-12 w-8 rounded-full" alt="usersPhoto" /> :
-            <h1 className='absolute top-1 right-12 w-8 bg-blue-500 flex items-center justify-center rounded-full py-2 px-5' >{firstLetter}</h1>)}
+          {user && (user?.photoURL ? <img src={user?.photoURL} className="absolute top-2 right-16 w-8 rounded-full" alt="usersPhoto" /> :
+            <h1 className='absolute top-1 right-16 w-8 bg-blue-500 flex items-center justify-center rounded-full py-2 px-5' >{firstLetter}</h1>)}
           <button onClick={() => setOpen(!open)} data-collapse-toggle="mobile-menu" type="button" className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-4" aria-expanded="false">
             <span className="sr-only">Open main menu</span>
             {!open ? <svg className="md:w-7 md:h-7 w-6 w-6 " fill="blue" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg> :

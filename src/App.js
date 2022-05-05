@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Signup from './components/Signup/Signup';
 import { Toaster } from 'react-hot-toast';
+import ProductsGallery from './components/ProductsGallery/ProductsGallery';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
     <div>
       <Header></Header>
       <Routes>
-        <Route path='/' element={[<Banner key="1"></Banner> , <Items key="2"></Items>]}></Route>
+        <Route path='/' element={[<Banner key="1"></Banner> , <Items key="2"></Items> , <ProductsGallery key="3"></ProductsGallery>]}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
