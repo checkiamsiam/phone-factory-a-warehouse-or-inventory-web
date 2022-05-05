@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
+import ProductCard2 from '../ProductCard/ProductCard2';
 
 const Items = () => {
   const [products , setProducts] = useState([]);
@@ -11,7 +12,7 @@ const Items = () => {
   const homePageProduct = products.slice(0 , 6);
   return (
     <div className=' grid md:grid-cols-2 gap-5 my-10'>
-      {homePageProduct.map(product => <ProductCard key={product._id} data={product}></ProductCard>)}
+      {homePageProduct.map(product => <ProductCard2 key={product._id} data={product}></ProductCard2>)}
     </div>
   );
 };
