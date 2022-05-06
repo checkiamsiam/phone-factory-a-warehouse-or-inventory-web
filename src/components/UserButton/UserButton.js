@@ -20,13 +20,16 @@ const UserButton = ({ user }) => {
         </div>
         <ul className="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
           <li>
-            <button className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</button>
+            <button className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</button>
           </li>
           <li>
-            <button  className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</button>
+            <button  className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Your Added</button>
           </li>
           <li>
-            <button className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</button>
+            <button className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Add New</button>
+          </li>
+          <li>
+            <button className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</button>
           </li>
         </ul>
         <div className="py-1">

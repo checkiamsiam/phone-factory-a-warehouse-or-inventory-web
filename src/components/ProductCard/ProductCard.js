@@ -21,7 +21,7 @@ const ProductCard2 = ({ data }) => {
             <p className="text-2xl font-bold text-blue-300 dark:text-white">${data?.price}</p>
           </div>
 
-          <Link to="/inventory/{data._id}" >Manage Update</Link>
+          <Link to="/inventory/{data._id}" >Manage Product</Link>
         </div>
 
       </div>

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
+import axios from 'axios';
 
-const useProducts = () =>{
+const useProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('https://phone-factor.herokuapp.com/products')
-      .then(res => res.json())
-      .then(data => setProducts(data))
+    axios.get('https://phone-factor.herokuapp.com/products')
+      .then(data => setProducts(data.data))
   }, []);
-  return  [products, setProducts]
+  return [products, setProducts]
 }
 export default useProducts;
