@@ -10,6 +10,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import auth from '../../firebase.init';
 import toast from 'react-hot-toast';
 import Loader from '../Loader/Loader';
+import { signOut } from 'firebase/auth';
 
 
 const Login = () => {
@@ -32,21 +33,21 @@ const Login = () => {
 
   if (loading1 || loading2 || loading3 || loading4) {
     return <Loader></Loader>
-}
+  }
 
-if (sending) {
-  toast('reset password email sending')
-}
+  if (sending) {
+    toast('reset password email sending')
+  }
 
-if(user1 || user2 || user3 || user4){
-  navigate(from, { replace: true })
-}
+  if (user1 || user2 || user3 || user4) {
+    navigate(from, { replace: true })
+  }
 
-error1 && console.log(error1.message);
-error2 && console.log(error2.message);
-error3 && console.log(error3.message);
-error4 && console.log(error4.message);
-error5 && console.log(error5.message);
+  error1 && console.log(error1.message);
+  error2 && console.log(error2.message);
+  error3 && console.log(error3.message);
+  error4 && console.log(error4.message);
+  error5 && console.log(error5.message);
 
 
   const handleEmail = (e) => {
@@ -71,16 +72,21 @@ error5 && console.log(error5.message);
   const handleSubmit = async (e) => {
     e.preventDefault()
     await signInWithEmailAndPassword(email, password)
-    if (user1) {
-      await navigate(from, { replace: true });
-      return
+    if (user1?.emailVerified) {
+      if (user1) {
+        await navigate(from, { replace: true });
+        return
+      } else {
+        await setErrorMessege('Your entire email or password is incorrect')
+      }
+      setEmail('')
+      setPassword('')
     } else {
-      await setErrorMessege('Your entire email or password is incorrect')
+      await toast('your entire email is not verified')
+      await signOut(auth)
     }
-    setEmail('')
-    setPassword('')
-  }
 
+  }
   const handleReset = async () => {
     if (email) {
       await sendPasswordResetEmail(email);

@@ -33,7 +33,7 @@ const Signup = () => {
     const [signInWithFacebook, user4, loading4, error5] = useSignInWithFacebook(auth);
     const [sendEmailVerification, sending] = useSendEmailVerification(auth);
 
-    if (user1 || user2 || user3 || user4) {
+    if ( user2 || user3 || user4) {
         navigate('/')
     }
     if (loading1 || updating || loading2 || loading3 || loading4) {

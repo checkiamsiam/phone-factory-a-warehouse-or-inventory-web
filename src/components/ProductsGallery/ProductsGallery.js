@@ -6,11 +6,14 @@ import GalleryCard from '../GalleryCard/GalleryCard';
 const ProductsGallery = () => {
   const [products] = useProducts();
   const settings = {
+    dots: true,
     className: "center",
     centerMode: true,
     infinite: true,
     centerPadding: "100px",
     slidesToShow: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
     speed: 500,
     responsive: [
       {
@@ -40,7 +43,7 @@ const ProductsGallery = () => {
     ]
   };
   return (
-    <div className='w-4/5 mx-auto'>
+    <div className='w-4/5 mx-auto  my-10'>
       <h1 className='text-5xl text-blue-600 my-5 text-center '><div>Products Image Gallery <br /> <span className='text-sm my-3 border-b-4 border-blue-300 border-dotted '>See all products in one album</span></div></h1>
       <Slider {...settings}>
         {products.map(product => <div className='my-5' key={product._id}> <GalleryCard data={product}></GalleryCard> </div>)}
