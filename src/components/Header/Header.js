@@ -22,7 +22,7 @@ const Header = () => {
   }
 
   return (
-    <div className='z-20 fixed top-0 w-full'>
+    <div data-aos="fade-down"  className='z-20 fixed top-0 w-full'>
       <nav className=" bg-[rgba(54,53,52,0.47)]   px-7  border-gray-200   py-2.5 rounded dark:bg-gray-800">
         <div className="container flex flex-wrap justify-between items-center ">
           <Link to="/" className="flex items-center">
