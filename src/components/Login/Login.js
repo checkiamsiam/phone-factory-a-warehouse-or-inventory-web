@@ -72,7 +72,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await signInWithEmailAndPassword(email, password)
-    if (user1?.emailVerified) {
+     if (user1?.emailVerified) {
       if (user1) {
         await navigate(from, { replace: true });
         return
@@ -83,7 +83,7 @@ const Login = () => {
       setPassword('')
     } else {
       await toast('your entire email is not verified')
-      await signOut(auth)
+      await navigate('/login')
     }
 
   }
