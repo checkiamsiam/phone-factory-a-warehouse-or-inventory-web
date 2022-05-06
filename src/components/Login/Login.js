@@ -72,7 +72,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await signInWithEmailAndPassword(email, password)
-     if (user1?.emailVerified) {
+    if (user1?.emailVerified) {
       if (user1) {
         await navigate(from, { replace: true });
         return
@@ -105,7 +105,7 @@ const Login = () => {
   }
 
   return (
-    <div id='top' className="mt-20 mx-auto container flex items-center" >
+    <div data-aos="fade-down" data-aos-duration="3000" id='top' className="mt-20 mx-auto container flex items-center" >
       <div className="w-full pt-2 p-4">
 
         <div className="mx-auto md:p-6 md:w-1/2">

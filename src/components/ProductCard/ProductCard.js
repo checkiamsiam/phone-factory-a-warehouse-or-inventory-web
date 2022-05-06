@@ -4,7 +4,8 @@ import './ProductCard.css'
 
 const ProductCard2 = ({ data }) => {
   return (
-    <div className="container z-0">
+    <div className="container z-0" data-aos="zoom-in-up"
+  >
       <div className="card">
         <div className="imgBx">
           <img src={data?.img} alt="Product image" />

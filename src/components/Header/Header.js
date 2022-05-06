@@ -21,7 +21,6 @@ const Header = () => {
     setOpen(!open)
   }
 
-  console.log(user);
   return (
     <div className='z-20 fixed top-0 w-full'>
       <nav className=" bg-[rgba(54,53,52,0.47)]   px-7  border-gray-200   py-2.5 rounded dark:bg-gray-800">

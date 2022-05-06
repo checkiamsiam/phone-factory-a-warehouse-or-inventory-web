@@ -83,7 +83,7 @@ const Signup = () => {
 
 
     return (
-        <div id='top' className="flex justify-center items-center  w-full  md:my-28 my-10">
+        <div data-aos="fade-down" data-aos-duration="3000" id='top' className="flex justify-center items-center  w-full  md:my-28 my-10">
             <div className="md:w-1/2 w-full bg-white rounded shadow-2xl hover:shadow-blue-300 p-8 m-4">
                 <h1 className="block w-full text-center text-blue-800 text-2xl font-bold mb-6">Register</h1>
                 <hr />
