@@ -20,7 +20,6 @@ const Header = () => {
     signOut(auth)
     setOpen(!open)
   }
-
   return (
     <div data-aos="fade-down"  className='z-20 fixed top-0 w-full'>
       <nav className=" bg-[rgba(54,53,52,0.47)]   px-7  border-gray-200   py-2.5 rounded dark:bg-gray-800">

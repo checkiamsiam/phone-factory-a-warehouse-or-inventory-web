@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { signOut } from 'firebase/auth';
 import auth from '../../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 
 const UserButton = ({ user }) => {
+  const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState(false)
   const firstLetter = user?.displayName?.slice(0, 1);
 
@@ -20,7 +22,7 @@ const UserButton = ({ user }) => {
         </div>
         <ul className="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
           <li>
-            <button className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</button>
+            <button onClick={()=> navigate('/inventory')} className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Manage Items</button>
           </li>
           <li>
             <button  className="block mx-auto px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Your Added</button>

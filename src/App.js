@@ -17,6 +17,7 @@ import { Toaster } from 'react-hot-toast';
 import ProductsGallery from './components/ProductsGallery/ProductsGallery';
 import WhyChoseUs from './components/WhyChoseUs/WhyChoseUs';
 import { useEffect } from 'react';
+import DetailsOfProduct from './components/DetailsOfProduct/DetailsOfProduct';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/' element={[<Banner key="1"></Banner>, <Items key="2"></Items>, <ProductsGallery key="3"></ProductsGallery>, <WhyChoseUs key="4"></WhyChoseUs>]}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/inventory/:id' element={<DetailsOfProduct></DetailsOfProduct>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
