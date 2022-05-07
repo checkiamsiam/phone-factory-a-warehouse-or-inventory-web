@@ -18,13 +18,15 @@ import ProductsGallery from './components/ProductsGallery/ProductsGallery';
 import WhyChoseUs from './components/WhyChoseUs/WhyChoseUs';
 import { useEffect } from 'react';
 import DetailsOfProduct from './components/DetailsOfProduct/DetailsOfProduct';
+import ScrollToTop from "react-scroll-to-top";
+import { BiArrowToTop } from 'react-icons/bi';
 
 
 function App() {
   useEffect(() => {
     AOS.init({
-      offset: 120, 
-      duration: 1000, 
+      offset: 120,
+      duration: 1000,
       easing: 'ease',
     })
   })
@@ -44,6 +46,7 @@ function App() {
       </Routes>
       <Footer></Footer>
       <Toaster />
+      <ScrollToTop smooth component={<BiArrowToTop />} style={{ borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }} />
     </div>
   );
 }

@@ -81,12 +81,7 @@ const Footer = () => {
                 <img src={logo} className="mr-3 h-8 rounded-full" alt="Flowbite Logo" />
                 <span className=" text-gray-500 hover:underline self-center text-2xl font-semibold whitespace-nowrap dark:text-white italic font-mono">Phone-Factor</span>
               </Link>
-              <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
-                <li>
-                  <a href="#top" className="scroll-smooth mr-4 hover:underline md:mr-6 bg-blue-400 text-white px-5 py-2 rounded-md">Jump to top</a>
-                </li>
-               
-              </ul>
+           
             </div>
           </div>
           <div className="container py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between">

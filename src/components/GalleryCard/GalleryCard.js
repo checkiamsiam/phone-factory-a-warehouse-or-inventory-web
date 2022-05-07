@@ -2,7 +2,7 @@ import React from 'react';
 
 const GalleryCard = ({ data }) => {
   return (
-    <div className='w-4/5 ' data-aos="fade-right"
+    <div className='w-4/5 ' data-aos="fade-up"
       data-aos-offset="300"
       data-aos-easing="ease-in-sine">
       <div className="flex justify-center md:h-[450px] h-[300px] overflow-hidden rounded-xl shadow-sm">

@@ -41,19 +41,19 @@ const Header = () => {
 
         <ul className="py-1 md:w-1/5 text-center" aria-labelledby="dropdown">
           <li>
-            <CustomLink to="/" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >Home</CustomLink>
+            <CustomLink onClick={()=> setOpen(!open)} to="/" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >Home</CustomLink>
           </li>
           <li>
-            <CustomLink to="/about" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >About</CustomLink>
+            <CustomLink onClick={()=> setOpen(!open)}  to="/about" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >About</CustomLink>
           </li>
           <li>
-            <CustomLink to="/inventory" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Inventory</CustomLink>
+            <CustomLink onClick={()=> setOpen(!open)}  to="/inventory" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Inventory</CustomLink>
           </li>
           <li>
-            <CustomLink to="/blogs" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Blogs</CustomLink>
+            <CustomLink onClick={()=> setOpen(!open)}  to="/blogs" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Blogs</CustomLink>
           </li>
           <li>
-            <CustomLink to="/contact" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Contact us</CustomLink>
+            <CustomLink onClick={()=> setOpen(!open)}  to="/contact" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Contact us</CustomLink>
           </li>
           <li>
             {!user ? <button onClick={handleGoToLogin} type="button" className="mt-3 text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 ">Log in</button> :
