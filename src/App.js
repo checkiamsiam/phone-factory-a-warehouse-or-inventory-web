@@ -20,6 +20,7 @@ import { useEffect } from 'react';
 import DetailsOfProduct from './components/DetailsOfProduct/DetailsOfProduct';
 import ScrollToTop from "react-scroll-to-top";
 import { BiArrowToTop } from 'react-icons/bi';
+import RequireAuth from './components/Shared/RequireAuth';
 
 
 function App() {
@@ -36,8 +37,16 @@ function App() {
       <Routes>
         <Route path='/' element={[<Banner key="1"></Banner>, <Items key="2"></Items>, <ProductsGallery key="3"></ProductsGallery>, <WhyChoseUs key="4"></WhyChoseUs>]}></Route>
         <Route path='/about' element={<About></About>}></Route>
-        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
-        <Route path='/inventory/:id' element={<DetailsOfProduct></DetailsOfProduct>}></Route>
+        <Route path='/inventory' element={
+          <RequireAuth>
+            <Inventory></Inventory>
+          </RequireAuth>
+        }></Route>
+        <Route path='/inventory/:id' element={
+          <RequireAuth>
+            <DetailsOfProduct></DetailsOfProduct>
+          </RequireAuth>
+        }></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
