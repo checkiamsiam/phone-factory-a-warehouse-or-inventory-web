@@ -7,9 +7,9 @@ import SingleItem from './SingleItem';
 
 const ProductList = () => {
   const navigate = useNavigate();
-  const [products] = useProducts()
+  const [products, setProducts , recall , setRecall] = useProducts()
 
-
+  
 
   return (
     <div className='w-5/6 mx-auto rounded-lg shadow-lg my-20  '>
@@ -40,7 +40,7 @@ const ProductList = () => {
           </tr>
 
 
-          {products.map(product => <SingleItem key={product._id} data={product}></SingleItem>)}
+          {products.map(product => <SingleItem key={product._id} data={product} recallApi={recall} setRecallApi={setRecall}></SingleItem>)}
 
 
         </tbody>

@@ -72,10 +72,10 @@ const DetailsOfProduct = () => {
         <table className="min-w-full border-collapse block md:table ">
           <thead className="block md:table-header-group">
             <tr className="px-2 border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
-              <th className="text-center bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 block md:table-cell">Supplier(Brand)</th>
-              <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-centerblock md:table-cell">Price(BDT)</th>
-              <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-centerblock md:table-cell">Sold Quantity</th>
-              <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Available Quantity</th>
+              <th className="text-center bg-pink-500 p-2 text-white font-bold md:border md:border-grey-500 block md:table-cell">Supplier(Brand)</th>
+              <th className="bg-pink-500 p-2 text-white font-bold md:border md:border-grey-500 text-centerblock md:table-cell">Price(BDT)</th>
+              <th className="bg-pink-500 p-2 text-white font-bold md:border md:border-grey-500 text-centerblock md:table-cell">Sold Quantity</th>
+              <th className="bg-pink-500 p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Available Quantity</th>
             </tr>
           </thead>
           <tbody className="block md:table-row-group">
