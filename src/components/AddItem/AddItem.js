@@ -18,7 +18,7 @@ const AddItem = () => {
     e.preventDefault()
     const postData = { name, img, body, price, quantity, supplier, sold: 0, added: user?.uid };
 
-    fetch('http://localhost:5000/products', {
+    fetch('http://phone-factor.herokuapp.com/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

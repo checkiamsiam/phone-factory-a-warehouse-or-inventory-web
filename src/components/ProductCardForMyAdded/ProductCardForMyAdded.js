@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const ProductCardForMyAdded = ({ pData, recall, setRecall }) => {
   const navigate = useNavigate();
 
- 
+
 
   const OnConfirmDelete = (id) => {
     onConfirm({
@@ -21,7 +21,7 @@ const ProductCardForMyAdded = ({ pData, recall, setRecall }) => {
         <p>Do you really want to delete this item? This process cannot be undone.</p>
       ),
       onSubmit: () => {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`http://phone-factor.herokuapp.com/products/${id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())
