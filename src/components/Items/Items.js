@@ -11,7 +11,7 @@ const Items = () => {
   const homePageProduct = products.slice(0, 6);
   return (
     <div>
-      <h1 className='text-5xl text-blue-600 my-5 text-center '><span className='border-b-4 border-blue-300 border-dotted '>Products view</span></h1>
+      <h1 className='text-5xl text-blue-600 my-5 text-center '><span className='border-b-4 border-blue-300 border-dashed '>Products view</span></h1>
       <div className=' grid md:grid-cols-2 gap-5 mt-10 mb-5' >
         {!seeAll ? (homePageProduct.map(product => <ProductCard key={product._id} data={product}></ProductCard>)) :
           (products.map(product => <ProductCard key={product._id} data={product}></ProductCard>))}

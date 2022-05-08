@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Link } from 'react-router-dom';
 import { onConfirm } from 'react-confirm-pro';
+import toast from 'react-hot-toast';
 
 const SingleItem = ({ data, recallApi, setRecallApi }) => {
 
@@ -27,10 +28,11 @@ const SingleItem = ({ data, recallApi, setRecallApi }) => {
         })
           .then(res => res.json())
           .then(data => setRecallApi(!recallApi))
+          .then(toast('Delete Successfully'))
 
       },
       onCancel: () => {
-        alert("Your Deletion was Canceled")
+        toast("Your Deletion was Canceled")
       },
     })
   };

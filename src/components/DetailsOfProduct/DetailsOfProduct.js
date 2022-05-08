@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { BsArrowRight } from 'react-icons/bs';
 import { TiEdit } from 'react-icons/ti';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -32,9 +33,11 @@ const DetailsOfProduct = () => {
       .then(res => res.json())
       .then(data => {
         setRecall(!recall)
-        restockAmount(0)
+        setRestockAmount(0)
       })
+
     setRestcokPopupOpen(!restockPopupOpen)
+    toast('Restock Success')
   }
 
   const handleDelivery = () => {
@@ -49,6 +52,7 @@ const DetailsOfProduct = () => {
     })
       .then(res => res.json())
       .then(data => setRecall(!recall))
+      toast('Delivery Completed')
   }
 
   const getRestockAmount = (e) => {

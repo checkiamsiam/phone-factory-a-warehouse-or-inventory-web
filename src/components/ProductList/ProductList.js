@@ -35,7 +35,7 @@ const ProductList = () => {
             <td></td>
             <td className='text-center '>
 
-              <button onClick={() => navigate('/inventory')} className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-7 py-2 mb-4  transition duration-500 my-5 bg-red-500 mx-2   flex hover:scale-110'><MdPostAdd className='mr-2' /> ADD Item</button>
+              <button onClick={() => navigate('/inventory/add')} className='text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-7 py-2 mb-4  transition duration-500 my-5 bg-red-500 mx-2   flex hover:scale-110'><MdPostAdd className='mr-2' /> ADD Item</button>
             </td>
           </tr>
 

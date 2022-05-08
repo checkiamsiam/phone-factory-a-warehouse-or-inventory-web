@@ -21,6 +21,8 @@ import DetailsOfProduct from './components/DetailsOfProduct/DetailsOfProduct';
 import ScrollToTop from "react-scroll-to-top";
 import { BiArrowToTop } from 'react-icons/bi';
 import RequireAuth from './components/Shared/RequireAuth';
+import AddItem from './components/AddItem/AddItem';
+import MyAdded from './components/MyAdded/MyAdded';
 
 
 function App() {
@@ -41,12 +43,26 @@ function App() {
           <RequireAuth>
             <Inventory></Inventory>
           </RequireAuth>
-        }></Route>
+        }
+        ></Route>
         <Route path='/inventory/:id' element={
           <RequireAuth>
             <DetailsOfProduct></DetailsOfProduct>
           </RequireAuth>
-        }></Route>
+        }
+        ></Route>
+        <Route path='/inventory/add' element={
+          <RequireAuth>
+            <AddItem></AddItem>
+          </RequireAuth>
+        }
+        ></Route>
+        <Route path='/inventory/my-added' element={
+          <RequireAuth>
+            <MyAdded />
+          </RequireAuth>
+        }
+        ></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>

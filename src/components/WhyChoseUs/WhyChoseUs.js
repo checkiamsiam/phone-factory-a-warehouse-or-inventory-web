@@ -10,7 +10,7 @@ const WhyChoseUs = () => {
  const navigate = useNavigate();
   return (
     <div>
-      <h1 className='md:text-5xl text-4xl text-blue-600 my-5 text-center '><span className='border-b-4 border-blue-300 border-dotted '>WHY CHOSE US</span></h1>
+      <h1 className='md:text-5xl text-4xl text-blue-600 my-5 text-center '><span className='border-b-4 border-blue-300 border-dashed '>WHY CHOSE US</span></h1>
       <div className='md:flex  gap-4 w-4/5 mx-auto my-10'>
         <div data-aos="fade-down" data-aos-duration="3000" className="cursor-pointer p-6 max-w-sm bg-transparent rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
           <FaMoneyCheckAlt className='text-9xl text-blue-400' />
