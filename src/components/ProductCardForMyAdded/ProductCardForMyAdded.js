@@ -3,9 +3,12 @@ import { onConfirm } from 'react-confirm-pro';
 import toast from 'react-hot-toast';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
+import { useNavigate } from 'react-router-dom';
 
-const ProductCardForMyAdded = ({pData , recall , srtRecall}) => {
+const ProductCardForMyAdded = ({ pData, recall, setRecall }) => {
+  const navigate = useNavigate();
 
+ 
 
   const OnConfirmDelete = (id) => {
     onConfirm({
@@ -22,7 +25,7 @@ const ProductCardForMyAdded = ({pData , recall , srtRecall}) => {
           method: 'DELETE',
         })
           .then(res => res.json())
-          .then(data => srtRecall(!recall))
+          .then(data => setRecall(!recall))
           .then(toast('Delete Successfully'))
 
       },
@@ -31,7 +34,7 @@ const ProductCardForMyAdded = ({pData , recall , srtRecall}) => {
       },
     })
   };
-
+  console.log(pData);
   return (
     <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 mb-3">
       <div className="flex flex-col items-center py-10">
@@ -39,8 +42,8 @@ const ProductCardForMyAdded = ({pData , recall , srtRecall}) => {
         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{pData.name}</h5>
         <span className="text-sm text-gray-500 dark:text-gray-400"><b>Available:</b> {pData.quantity}</span>
         <div className="flex mt-4 space-x-3 lg:mt-6">
-        <button className="text-2xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded"><TiEdit /></button>
-        <button onClick={()=> OnConfirmDelete(pData._id)} className=" text-2xl ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"><RiDeleteBin5Line /></button>
+          <button onClick={() => navigate(`/inventory/${pData._id}`)} className="flex items-center text-xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded"><TiEdit />Details</button>
+          <button onClick={() => OnConfirmDelete(pData._id)} className="flex items-center text-xl ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"><RiDeleteBin5Line />Delete</button>
         </div>
       </div>
     </div>
