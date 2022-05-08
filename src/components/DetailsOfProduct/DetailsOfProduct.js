@@ -22,7 +22,7 @@ const DetailsOfProduct = () => {
     e.preventDefault()
     let newQuantity = parseInt(thisProduct.quantity) + parseInt(restockAmount)
     const updatedData = { name: thisProduct.name, img: thisProduct.img, body: thisProduct.body, price: thisProduct.price, quantity: newQuantity, supplier: thisProduct.supplier, sold: thisProduct.sold, added: thisProduct.added };
-    const url = `http://phone-factor.herokuapp.com/products/${thisProduct._id}`
+    const url = `https://phone-factor.herokuapp.com/products/${thisProduct._id}`
     fetch(url, {
       method: 'PUT',
       headers: {
@@ -42,7 +42,7 @@ const DetailsOfProduct = () => {
 
   const handleDelivery = () => {
     const updatedData = { name: thisProduct.name, img: thisProduct.img, body: thisProduct.body, price: thisProduct.price, quantity: (parseInt(thisProduct.quantity) - 1), supplier: thisProduct.supplier, sold: (parseInt(thisProduct.sold) + 1), added: thisProduct.added };
-    const url = `http://phone-factor.herokuapp.com/products/${thisProduct._id}`
+    const url = `phone-factor.herokuapp.com/${thisProduct._id}`
     fetch(url, {
       method: 'PUT',
       headers: {

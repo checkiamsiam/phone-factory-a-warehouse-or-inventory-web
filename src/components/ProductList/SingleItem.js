@@ -23,7 +23,7 @@ const SingleItem = ({ data, recallApi, setRecallApi }) => {
         <p>Do you really want to delete this item? This process cannot be undone.</p>
       ),
       onSubmit: () => {
-        fetch(`http://phone-factor.herokuapp.com/products/${id}`, {
+        fetch(`https://phone-factor.herokuapp.com/products/${id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())

@@ -15,7 +15,7 @@ const Edit = () => {
     e.preventDefault()
     const editedData = { name: e.target.ProductName.value, img: e.target.imgUrl.value, body: e.target.details.value, price: parseInt(e.target.price.value), quantity: parseInt(e.target.quantity.value), supplier: e.target.supplier.value, sold: thisProduct?.sold, added: params.id };
 
-    fetch(`http://phone-factor.herokuapp.com/products/${params.id}`, {
+    fetch(`https://phone-factor.herokuapp.com/products/${params.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

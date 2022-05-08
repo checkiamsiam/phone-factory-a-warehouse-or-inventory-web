@@ -5,7 +5,7 @@ const useProducts = () => {
   const [recall, setRecall] = useState(false);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get('http://phone-factor.herokuapp.com/products')
+    axios.get('https://phone-factor.herokuapp.com/products')
       .then(async res => setProducts(res.data))
   }, [recall]);
   return [products, setProducts, recall, setRecall]
