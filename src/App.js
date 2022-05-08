@@ -23,6 +23,7 @@ import { BiArrowToTop } from 'react-icons/bi';
 import RequireAuth from './components/Shared/RequireAuth';
 import AddItem from './components/AddItem/AddItem';
 import MyAdded from './components/MyAdded/MyAdded';
+import Edit from './components/Edit/Edit';
 
 
 function App() {
@@ -54,6 +55,12 @@ function App() {
         <Route path='/inventory/add' element={
           <RequireAuth>
             <AddItem></AddItem>
+          </RequireAuth>
+        }
+        ></Route>
+        <Route path='inventory/edit/:id' element={
+          <RequireAuth>
+            <Edit></Edit>
           </RequireAuth>
         }
         ></Route>

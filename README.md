@@ -1,4 +1,4 @@
-# Phone-factor (A warehouse of phones and also can say a inventory website created by react app
+# Phone-factor (A warehouse of phones and also can say a inventory website created by react app)
 
 ## Live Site Link [https://phone-factor.web.app/](https://phone-factor.web.app/)
 

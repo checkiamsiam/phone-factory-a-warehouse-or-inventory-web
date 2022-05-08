@@ -3,12 +3,12 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { onConfirm } from 'react-confirm-pro';
 import toast from 'react-hot-toast';
 
 const SingleItem = ({ data, recallApi, setRecallApi }) => {
-
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
 
@@ -52,10 +52,10 @@ const SingleItem = ({ data, recallApi, setRecallApi }) => {
       <td className="p-2 md:border md:border-grey-500 text-center block md:table-cell"><span className="inline-block w-1/3 md:hidden font-bold">Available:</span>{data.quantity}</td>
       <td className="p-2 md:border md:border-grey-500 text-center block md:table-cell">
         <span className="inline-block w-1/3 md:hidden font-bold">Actions:</span>
-        <button className="text-2xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded"><TiEdit /></button>
+        <button onClick={() => navigate(`/inventory/edit/${data._id}`)} className="text-2xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded"><TiEdit /></button>
         <button onClick={() => OnConfirmDelete(data._id)} className=" text-2xl ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"><RiDeleteBin5Line /></button>
       </td>
-      
+
     </tr>
   );
 };

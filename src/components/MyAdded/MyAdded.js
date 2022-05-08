@@ -19,7 +19,7 @@ const MyAdded = () => {
       </div>
       {/* { !myAddedProducts && <h1 className='text-3xl text-center text-red-500 my-6 '>You Was't Added Anything</h1>} */}
 
-      <div className='text-right'>
+      <div className='text-right md:ml-20 ml-14'>
         <button onClick={() => navigate('/inventory')} className='text-center text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 ml-10 transition duration-500 my-5 bg-red-500      flex items-center hover:scale-110'><BsArrowRight /> Manage Inventories</button>
       </div>
     </div>

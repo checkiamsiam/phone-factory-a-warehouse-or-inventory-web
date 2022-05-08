@@ -1,37 +1,34 @@
-import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
+import { useNavigate, useParams } from 'react-router-dom';
+import useProducts from '../../hooks/useProducts';
 
-const AddItem = () => {
+
+const Edit = () => {
+  const params = useParams();
   const navigate = useNavigate();
-  const [user] = useAuthState(auth);
-  const [name, setProductName] = useState('');
-  const [supplier, setSupplierName] = useState('');
-  const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
-  const [img, setImgUrl] = useState('');
-  const [body, setBody] = useState('');
+  const [products, setProducts, recall, setRecall] = useProducts();
+  const thisProduct = products.find(product => product._id === params.id);
 
-  const handlePost = (e) => {
+
+  const handleUpdate = (e) => {
     e.preventDefault()
-    const postData = { name, img, body, price, quantity, supplier, sold: 0, added: user?.uid };
+    const editedData = { name: e.target.ProductName.value, img: e.target.imgUrl.value, body: e.target.details.value, price: parseInt(e.target.price.value), quantity: parseInt(e.target.quantity.value), supplier: e.target.supplier.value, sold: thisProduct?.sold, added: params.id };
 
-    fetch('http://localhost:5000/products', {
-      method: 'POST',
+    fetch(`http://localhost:5000/products/${params.id}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(postData)
+      body: JSON.stringify(editedData)
     })
       .then(res => res.json())
       .then(data => {
-        toast('Product Added successfully')
-        navigate('/inventory')
+        toast('Product Edited successfully')
+        navigate(`/inventory/${params.id}`)
       })
 
-
+    setRecall(!recall)
 
   }
   return (
@@ -45,7 +42,7 @@ const AddItem = () => {
         <div
           className="mb-5 flex items-center mx-auto max-w-md "
         >
-          <h2 className="text-blue-300 dark:text-gray-200 text-3xl font-bold">Add New Product</h2>
+          <h2 className="text-blue-300 dark:text-gray-200 text-3xl font-bold">Edit Products</h2>
         </div>
         <div
           className="flex flex-col lg:flex-row lg:items-center text-slate-900 dark:text-gray-200 lg:justify-between -mx-4"
@@ -54,11 +51,11 @@ const AddItem = () => {
 
           <div className="w-full lg:w-1/2 xl:w-5/12 px-4 mx-auto " data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">
             <div className="bg-gray-100 dark:bg-slate-800 relative rounded-lg p-8 sm:p-12 shadow-lg">
-              <form>
+              <form onSubmit={handleUpdate}>
                 <div className="mb-6">
                   <label className='font-mono font-semibold' htmlFor="Product-name">Product Name:</label>
                   <input
-                    onChange={(e) => setProductName(e.target.value)}
+                    defaultValue={thisProduct?.name}
                     type="text"
                     placeholder="Product Name"
                     className="
@@ -74,14 +71,14 @@ const AddItem = () => {
                                         focus-visible:shadow-none
                                         focus:border-primary
                                         "
-                    name="Product-name"
+                    name="ProductName"
                     id="Product-name"
                   />
                 </div>
                 <div className="mb-6">
                   <label className='font-mono font-semibold' htmlFor="supplier">Supplier:</label>
                   <input
-                    onChange={(e) => setSupplierName(e.target.value)}
+                    defaultValue={thisProduct?.supplier}
                     type="text"
                     placeholder="Supplier Name"
                     className="
@@ -104,7 +101,7 @@ const AddItem = () => {
                 <div className="mb-6">
                   <label className='font-mono font-semibold' htmlFor="price">Price:</label>
                   <input
-                    onChange={(e) => setPrice(parseInt(e.target.value))}
+                    defaultValue={thisProduct?.price}
                     type="number"
                     placeholder="Price"
                     className="
@@ -127,7 +124,7 @@ const AddItem = () => {
                 <div className="mb-6">
                   <label className='font-mono font-semibold' htmlFor="quantity">Quantity:</label>
                   <input
-                    onChange={(e) => setQuantity(parseInt(e.target.value))}
+                    defaultValue={thisProduct?.quantity}
                     type="number"
                     placeholder="Quantity"
                     className="
@@ -148,9 +145,9 @@ const AddItem = () => {
                   />
                 </div>
                 <div className="mb-6">
-                  <label className='font-mono font-semibold' htmlFor="img-url">image URL:</label>
+                  <label className='font-mono font-semibold' htmlFor="img-url">Image Url:</label>
                   <input
-                    onChange={(e) => setImgUrl(e.target.value)}
+                    defaultValue={thisProduct?.img}
                     type="text"
                     placeholder="image URL (https://image.ibb.co/uc/name.png)"
                     className="
@@ -166,14 +163,14 @@ const AddItem = () => {
                                         focus-visible:shadow-none
                                         focus:border-primary
                                         "
-                    name="img-url"
+                    name="imgUrl"
                     id="img-url"
                   />
                 </div>
                 <div className="mb-6">
-                  <label className='font-mono font-semibold' htmlFor="details">Specifications(Details):</label>
+                <label className='font-mono font-semibold' htmlFor="Product-name">Product Specification:</label>
                   <textarea
-                    onChange={(e) => setBody(e.target.value)}
+                    defaultValue={thisProduct?.body}
                     rows="5"
                     placeholder="Specifications(Details)"
                     className="
@@ -195,13 +192,12 @@ const AddItem = () => {
                 </div>
                 <div>
                   <button
-                    onClick={handlePost}
                     type="submit"
                     className="
                                         w-full
                                         text-gray-100
                                         hover:text-gray-700
-                                        bg-blue-400
+                                        bg-red-400
                                         rounded
                                         border border-primary
                                         dark:border-slate-600
@@ -209,10 +205,10 @@ const AddItem = () => {
                                         transition
                                         ease-in-out
                                         duration-500
-                                        hover:bg-blue-500
+                                        hover:bg-red-500
                                         "
                   >
-                    Add
+                    Update
                   </button>
                 </div>
               </form>
@@ -229,7 +225,7 @@ const AddItem = () => {
                       fillRule="evenodd"
                       clipRule="evenodd"
                       d="M0 100C0 44.7715 0 0 0 0C55.2285 0 100 44.7715 100 100C100 100 100 100 0 100Z"
-                      fill="blue"
+                      fill="#FF3383"
                     />
                   </svg>
                 </span>
@@ -1032,4 +1028,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default Edit;

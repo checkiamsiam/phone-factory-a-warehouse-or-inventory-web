@@ -68,7 +68,7 @@ const DetailsOfProduct = () => {
         <div className="flex flex-col justify-between p-4 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Details OF <span className='text-pink-400'>{thisProduct?.name}</span></h5>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{thisProduct?.body}</p>
-          <button className="flex justify-center  items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded text-2xl"><TiEdit className='text-3xl' /> <span>Edit</span></button>
+          <button onClick={()=> navigate(`/inventory/edit/${thisProduct._id}`)} className="flex justify-center  items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded text-2xl"><TiEdit className='text-3xl' /> <span>Edit</span></button>
         </div>
       </div>
       <h5 className="text-blue-500 mb-2 text-3xl font-bold tracking-tight  dark:text-white text-center underline">Stock Updates</h5>
