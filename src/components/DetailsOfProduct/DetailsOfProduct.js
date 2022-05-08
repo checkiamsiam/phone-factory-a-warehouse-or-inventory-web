@@ -42,7 +42,7 @@ const DetailsOfProduct = () => {
 
   const handleDelivery = () => {
     const updatedData = { name: thisProduct.name, img: thisProduct.img, body: thisProduct.body, price: thisProduct.price, quantity: (parseInt(thisProduct.quantity) - 1), supplier: thisProduct.supplier, sold: (parseInt(thisProduct.sold) + 1), added: thisProduct.added };
-    const url = `phone-factor.herokuapp.com/${thisProduct._id}`
+    const url = `https://phone-factor.herokuapp.com/products/${thisProduct._id}`
     fetch(url, {
       method: 'PUT',
       headers: {
@@ -51,8 +51,10 @@ const DetailsOfProduct = () => {
       body: JSON.stringify(updatedData)
     })
       .then(res => res.json())
-      .then(data => setRecall(!recall))
-    toast('Delivery Completed')
+      .then(data => {
+        setRecall(!recall)
+        toast('Delivery Completed')
+      })
   }
 
   const getRestockAmount = (e) => {
