@@ -16,7 +16,7 @@ const AddItem = () => {
 
   const handlePost = (e) => {
     e.preventDefault()
-    const postData = { name, img, body, price, quantity, supplier, sold: 0, added: user?.uid };
+    const postData = { name, img, body, price , quantity, supplier, sold: 0, added: user?.uid };
 
     fetch('https://phone-factor.herokuapp.com/products', {
       method: 'POST',
@@ -105,7 +105,7 @@ const AddItem = () => {
                   <label className='font-mono font-semibold' htmlFor="price">Price:</label>
                   <input
                     onChange={(e) => setPrice(parseInt(e.target.value))}
-                    type="number"
+                    type="text"
                     placeholder="Price"
                     className="
                                         w-full
@@ -128,7 +128,7 @@ const AddItem = () => {
                   <label className='font-mono font-semibold' htmlFor="quantity">Quantity:</label>
                   <input
                     onChange={(e) => setQuantity(parseInt(e.target.value))}
-                    type="number"
+                    type="text"
                     placeholder="Quantity"
                     className="
                                         w-full

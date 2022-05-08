@@ -13,7 +13,7 @@ const Edit = () => {
 
   const handleUpdate = (e) => {
     e.preventDefault()
-    const editedData = { name: e.target.ProductName.value, img: e.target.imgUrl.value, body: e.target.details.value, price: e.target.price.value , quantity: e.target.quantity.value , supplier: e.target.supplier.value, sold: thisProduct?.sold, added: params.id };
+    const editedData = { name: e.target.ProductName.value, img: e.target.imgUrl.value, body: e.target.details.value, price: parseInt(e.target.price.value), quantity: parseInt(e.target.quantity.value), supplier: e.target.supplier.value, sold: thisProduct?.sold, added: params.id };
 
     fetch(`https://phone-factor.herokuapp.com/products/${params.id}`, {
       method: 'PUT',
@@ -102,7 +102,7 @@ const Edit = () => {
                   <label className='font-mono font-semibold' htmlFor="price">Price:</label>
                   <input
                     defaultValue={thisProduct?.price}
-                    type="number"
+                    type="text"
                     placeholder="Price"
                     className="
                                         w-full
@@ -125,7 +125,7 @@ const Edit = () => {
                   <label className='font-mono font-semibold' htmlFor="quantity">Quantity:</label>
                   <input
                     defaultValue={thisProduct?.quantity}
-                    type="number"
+                    type="text"
                     placeholder="Quantity"
                     className="
                                         w-full
