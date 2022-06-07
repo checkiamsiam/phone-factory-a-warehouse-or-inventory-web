@@ -7,10 +7,12 @@ import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import UserButton from '../UserButton/UserButton';
 
+
 const Header = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
+
 
   const handleGoToLogin = () => {
     navigate('/login')
@@ -21,7 +23,7 @@ const Header = () => {
     setOpen(!open)
   }
   return (
-    <div data-aos="fade-down"  className='z-20 fixed top-0 w-full'>
+    <div data-aos="fade-down" className='z-20 fixed top-0 w-full'>
       <nav className=" bg-[rgba(54,53,52,0.47)]   px-7  border-gray-200   py-2.5 rounded dark:bg-gray-800">
         <div className="container flex flex-wrap justify-between items-center ">
           <Link to="/" className="flex items-center">
@@ -41,19 +43,19 @@ const Header = () => {
 
         <ul className="py-1 md:w-1/5 text-center" aria-labelledby="dropdown">
           <li>
-            <CustomLink onClick={()=> setOpen(!open)} to="/" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >Home</CustomLink>
+            <CustomLink onClick={() => setOpen(!open)} to="/" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >Home</CustomLink>
           </li>
           <li>
-            <CustomLink onClick={()=> setOpen(!open)}  to="/about" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >About</CustomLink>
+            <CustomLink onClick={() => setOpen(!open)} to="/about" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700" >About</CustomLink>
           </li>
           <li>
-            <CustomLink onClick={()=> setOpen(!open)}  to="/inventory" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Inventory</CustomLink>
+            <CustomLink onClick={() => setOpen(!open)} to="/inventory" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Inventory</CustomLink>
           </li>
           <li>
-            <CustomLink onClick={()=> setOpen(!open)}  to="/blogs" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Blogs</CustomLink>
+            <CustomLink onClick={() => setOpen(!open)} to="/blogs" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Blogs</CustomLink>
           </li>
           <li>
-            <CustomLink onClick={()=> setOpen(!open)}  to="/contact" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Contact us</CustomLink>
+            <CustomLink onClick={() => setOpen(!open)} to="/contact" className="block py-2 px-4 md:text-lg text-sm text-white dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white hover:text-red-700">Contact us</CustomLink>
           </li>
           <li>
             {!user ? <button onClick={handleGoToLogin} type="button" className="mt-3 text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 ">Log in</button> :

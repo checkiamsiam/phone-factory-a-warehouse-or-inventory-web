@@ -2,7 +2,12 @@
 
 ## Live Site Link [https://phone-factor.web.app/](https://phone-factor.web.app/)
 
-It was my first project of backend added website. i was also build the server site of this project and it was deployed in heroku. the journey was very enjoyable for me and thanks to programing hero for guid me for this project and give me the idia of this
+## `Key Features`
+
+- Manage Your Products
+- Store product in organized way
+- Delivery and Restock
+- Add or Remove
 
 ## `Packages Used`
 
